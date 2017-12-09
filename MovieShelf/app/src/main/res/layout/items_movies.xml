@@ -63,15 +63,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/iv_poster"
+            android:layout_alignParentRight="true"
             android:layout_marginBottom="4dp"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:layout_toEndOf="@id/iv_poster"
             android:background="@drawable/roundedbutton"
             android:foreground="@drawable/ripple_white"
-            android:padding="8dp"
+            android:padding="10dp"
             android:text="Movie Review"
             android:textAllCaps="false"
-            android:textColor="@color/icons" />
+            android:textColor="@color/icons"
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/iv_heart"
