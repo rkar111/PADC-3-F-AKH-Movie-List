@@ -12,10 +12,10 @@
 
         <ImageView
             android:id="@+id/iv_poster"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
+            android:layout_width="140dp"
+            android:layout_height="220dp"
             android:scaleType="fitXY"
-            android:src="@drawable/dummy_gits" />
+            android:src="@drawable/cocoposter" />
 
         <TextView
             android:id="@+id/tv_movie_name"
@@ -24,7 +24,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginTop="4dp"
             android:layout_toRightOf="@id/iv_poster"
-            android:text="Ghost in the Shell"
+            android:text="Co Co"
             android:textColor="@color/primary_text"
             android:textSize="18sp" />
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/tv_movie_name"
             android:layout_below="@id/tv_movie_name"
-            android:text="(Mystery , Crime , Live-action)"
+            android:text="(Animation , Music , Family)"
             android:textColor="@color/primary_text"
             android:textStyle="bold" />
 
@@ -57,7 +57,7 @@
             android:layout_below="@id/tv_popular"
             android:isIndicator="true"
             android:numStars="5"
-            android:rating="4.5" />
+            android:rating="5" />
 
         <Button
             android:id="@+id/btn_movie_review"
@@ -73,7 +73,7 @@
             android:foreground="@drawable/ripple_white"
             android:text="Movie Review"
             android:textAllCaps="false"
-            android:textColor="@color/icons" />
+            android:textColor="@color/full_white" />
 
         <TextView
             android:id="@+id/tv_movie_rating"
@@ -81,8 +81,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_favorite_amber_36dp"
             android:gravity="center"
-            android:text="4.5"
-            android:textColor="@color/icons"
+            android:text="5"
+            android:textColor="@color/full_white"
             android:textSize="12sp" />
 
         <ImageView

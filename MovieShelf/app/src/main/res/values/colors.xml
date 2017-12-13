@@ -16,5 +16,7 @@
 
     <color name="divider">#BDBDBD</color>
 
+    <color name="full_white">#FFFFFF</color>
+
 
 </resources>

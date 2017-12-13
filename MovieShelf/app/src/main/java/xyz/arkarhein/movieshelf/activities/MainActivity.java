@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
+    @BindView(R.id.btn_movie_review)
+    Button btnMovieReview;
+
     private MoviesAdapter nMoviesAdapter = new MoviesAdapter();
 
     @Override
@@ -72,5 +75,6 @@ public class MainActivity extends AppCompatActivity {
         Snackbar.make(view, "Search feature coming soon", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
-    
+
+
 }
