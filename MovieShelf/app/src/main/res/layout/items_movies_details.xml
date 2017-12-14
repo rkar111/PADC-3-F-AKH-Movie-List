@@ -2,22 +2,20 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="320dp"
+        android:background="@drawable/hector_miguel"
+        android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="320dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="centerCrop"
-                android:src="@drawable/hector_miguel" />
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -28,7 +26,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="32dp"
                     android:layout_marginLeft="8dp"
                     android:text="Released : October 20, 2017"
                     android:textColor="@color/full_white" />
@@ -49,20 +47,22 @@
                     android:layout_width="150dp"
                     android:layout_height="220dp"
                     android:layout_above="@id/rb_rating_movie"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:layout_marginLeft="16dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/cocoposter" />
 
-                <android.support.v4.widget.NestedScrollView
+                <ScrollView
                     android:id="@+id/sv_movie_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_above="@id/tv_released_date"
+                    android:layout_alignTop="@id/iv_small_poster"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/tv_released_date">
+                    android:layout_toEndOf="@id/tv_released_date"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
 
                     <TextView
                         android:id="@+id/tv_small_movie_details"
@@ -72,7 +72,7 @@
                         android:textColor="@color/full_white"
                         android:textSize="16sp" />
 
-                </android.support.v4.widget.NestedScrollView>
+                </ScrollView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,8 +112,198 @@
         android:id="@+id/nsv_movies_reviews"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/primary"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <RelativeLayout
+            android:id="@+id/rl_main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_background_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/primary_dark" />
+
+            <TextView
+                android:id="@+id/tv_movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center_vertical"
+                android:text="CoCo"
+                android:textColor="@color/full_white"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/hsv_movie_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_background_bar"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded"
+                        android:padding="4dp"
+                        android:text="Animation"
+                        android:textColor="@color/primary_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="|"
+                        android:textColor="@color/full_white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/rounded"
+                        android:padding="4dp"
+                        android:text="Music"
+                        android:textColor="@color/primary_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="|"
+                        android:textColor="@color/full_white" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:background="@drawable/rounded"
+                        android:padding="4dp"
+                        android:text="Family"
+                        android:textColor="@color/primary_text" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btnv_movie_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/hsv_movie_genre"
+                android:layout_below="@id/hsv_movie_genre"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_border"
+                android:clickable="false"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="1 hrs 49 mins"
+                android:textAllCaps="false"
+                android:textColor="@color/full_white"
+                android:textSize="14sp" />
+
+            <!--ImageView
+                android:id="@+id/iv_example"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/btnv_movie_duration"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/hector_miguel" /-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movies_trailers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnv_movie_duration"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/tv_review_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_movies_trailers"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/movie_review_01_title"
+                android:textColor="@color/full_white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_reviews_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_review_title"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/movie_reviews_01"
+                android:textColor="@color/full_white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_movie_title_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_reviews_01"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/movie_review_02_title"
+                android:textColor="@color/full_white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_reviews_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_movie_title_02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/movie_review_02"
+                android:textColor="@color/full_white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_movie_title_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_reviews_02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/movie_review_03_title"
+                android:textColor="@color/full_white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_reviews_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_movie_title_03"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/movie_review_03"
+                android:textColor="@color/full_white"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
 
 
     </android.support.v4.widget.NestedScrollView>
