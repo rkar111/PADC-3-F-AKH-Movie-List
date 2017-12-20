@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xyz.arkarhein.movieshelf.R;
+import xyz.arkarhein.movieshelf.delegates.MoviesActionDelegate;
 import xyz.arkarhein.movieshelf.viewholders.MoviesViewHolder;
 
 /**
@@ -14,12 +15,19 @@ import xyz.arkarhein.movieshelf.viewholders.MoviesViewHolder;
  */
 
 public class MoviesAdapter extends RecyclerView.Adapter {
+
+    private MoviesActionDelegate nMoviesActionDelegate;
+
+    public MoviesAdapter(MoviesActionDelegate moviesActionDelegate) {
+        nMoviesActionDelegate = moviesActionDelegate;
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         View moviesView = inflater.inflate(R.layout.items_movies, parent, false);
-        MoviesViewHolder moviesViewHolder = new MoviesViewHolder(moviesView);
+        MoviesViewHolder moviesViewHolder = new MoviesViewHolder(moviesView, nMoviesActionDelegate);
         return moviesViewHolder;
     }
 

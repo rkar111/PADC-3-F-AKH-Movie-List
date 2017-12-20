@@ -19,8 +19,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.arkarhein.movieshelf.R;
 import xyz.arkarhein.movieshelf.adapters.MoviesAdapter;
+import xyz.arkarhein.movieshelf.delegates.MoviesActionDelegate;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MoviesActionDelegate {
 
     @BindView(R.id.rv_movies)
     RecyclerView rvMovies;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-    private MoviesAdapter nMoviesAdapter = new MoviesAdapter();
+    private MoviesAdapter nMoviesAdapter = new MoviesAdapter(this);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,5 +74,17 @@ public class MainActivity extends AppCompatActivity {
     public void onClickFab(View view) {
         Snackbar.make(view, "Search feature coming soon", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
+    }
+
+    @Override
+    public void onTapMovies() {
+        Intent intent = new Intent(getApplicationContext(), itemsMoviesReviewsDetailsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapMovieReviewsBtn() {
+        Intent intent = new Intent(getApplicationContext(), itemsMoviesReviewsDetailsActivity.class);
+        startActivity(intent);
     }
 }
