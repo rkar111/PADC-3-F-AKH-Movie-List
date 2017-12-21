@@ -22,8 +22,8 @@ public class MoviesViewHolder extends RecyclerView.ViewHolder {
         nMoviesActionDelegate = moviesActionDelegate;
     }
 
-    @OnClick(R.id.btn_movie_review)
+    @OnClick(R.id.cv_movies_items)
     public void onTapMoviesItem(View v) {
-        nMoviesActionDelegate.onTapMovieReviewsBtn();
+        nMoviesActionDelegate.onTapMovies();
     }
 }

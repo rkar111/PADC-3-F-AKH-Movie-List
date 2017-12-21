@@ -83,8 +83,7 @@ public class MainActivity extends AppCompatActivity implements MoviesActionDeleg
     }
 
     @Override
-    public void onTapMovieReviewsBtn() {
-        Intent intent = new Intent(getApplicationContext(), itemsMoviesReviewsDetailsActivity.class);
-        startActivity(intent);
+    public void onTapMovieOverviewsBtn() {
+
     }
 }

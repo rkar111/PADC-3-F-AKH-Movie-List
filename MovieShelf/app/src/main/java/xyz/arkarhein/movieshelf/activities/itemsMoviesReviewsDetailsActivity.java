@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.movieshelf.R;
+import xyz.arkarhein.movieshelf.adapters.MoviesGenresAdapter;
 import xyz.arkarhein.movieshelf.adapters.MoviesReviewsAdapter;
 
 /**
@@ -25,7 +26,12 @@ public class itemsMoviesReviewsDetailsActivity extends AppCompatActivity {
     @BindView(R.id.rv_movies_trailers)
     RecyclerView rvMoviesTrailers;
 
+    @BindView(R.id.rv_movie_genre)
+    RecyclerView rvMoviesGenres;
+
     private MoviesReviewsAdapter nMoviesReviewsAdapter = new MoviesReviewsAdapter();
+
+    private MoviesGenresAdapter nMoviesGenresAdapter = new MoviesGenresAdapter();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +46,10 @@ public class itemsMoviesReviewsDetailsActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         rvMoviesTrailers.setLayoutManager(linearLayoutManager);
         rvMoviesTrailers.setAdapter(nMoviesReviewsAdapter);
+
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
+        rvMoviesGenres.setLayoutManager(linearLayoutManager1);
+        rvMoviesGenres.setAdapter(nMoviesGenresAdapter);
 
     }
 }

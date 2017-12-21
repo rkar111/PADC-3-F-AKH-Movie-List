@@ -7,6 +7,6 @@ package xyz.arkarhein.movieshelf.delegates;
 public interface MoviesActionDelegate {
 
     void onTapMovies();
-    void onTapMovieReviewsBtn();
+    void onTapMovieOverviewsBtn();
 
 }

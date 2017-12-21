@@ -62,7 +62,7 @@
             android:rating="5" />
 
         <Button
-            android:id="@+id/btn_movie_review"
+            android:id="@+id/btn_movie_overview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@id/iv_poster"
@@ -73,7 +73,7 @@
             android:layout_toEndOf="@id/iv_poster"
             android:background="@drawable/roundedbutton"
             android:foreground="@drawable/ripple_white"
-            android:text="Movie Review"
+            android:text="Movie Overview"
             android:textAllCaps="false"
             android:textColor="@color/full_white" />
 

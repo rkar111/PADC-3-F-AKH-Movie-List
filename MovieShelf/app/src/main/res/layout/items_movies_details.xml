@@ -138,7 +138,7 @@
                 android:textColor="@color/full_white"
                 android:textSize="20sp" />
 
-            <HorizontalScrollView
+            <!--HorizontalScrollView
                 android:id="@+id/hsv_movie_genre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -194,14 +194,21 @@
 
                 </LinearLayout>
 
-            </HorizontalScrollView>
+            </HorizontalScrollView-->
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_movie_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_background_bar"
+                android:layout_marginTop="8dp" />
 
             <TextView
                 android:id="@+id/btnv_movie_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/hsv_movie_genre"
-                android:layout_below="@id/hsv_movie_genre"
+                android:layout_below="@id/rv_movie_genre"
+                android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button_border"
                 android:padding="12dp"
@@ -233,7 +240,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_movies_trailers"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="16dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="8dp"
