@@ -9,8 +9,7 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:background="@drawable/hector_miguel"
-        android:fitsSystemWindows="true">
+        android:background="@drawable/hector_miguel">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"

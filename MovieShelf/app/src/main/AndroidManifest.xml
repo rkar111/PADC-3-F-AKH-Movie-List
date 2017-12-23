@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.itemsMoviesReviewsDetailsActivity"
+            android:name=".activities.ItemsMoviesReviewsDetailsActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>

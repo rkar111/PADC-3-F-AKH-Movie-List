@@ -21,7 +21,7 @@ import xyz.arkarhein.movieshelf.adapters.MoviesReviewsAdapter;
  * Created by Arkar Hein on 12/15/2017.
  */
 
-public class itemsMoviesReviewsDetailsActivity extends AppCompatActivity {
+public class ItemsMoviesReviewsDetailsActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_movies_trailers)
     RecyclerView rvMoviesTrailers;

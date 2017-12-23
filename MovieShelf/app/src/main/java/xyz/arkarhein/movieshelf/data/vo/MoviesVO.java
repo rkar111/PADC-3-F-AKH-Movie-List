@@ -9,26 +9,26 @@ import java.util.List;
 
 public class MoviesVO {
 
-    private String voteCount;
-    private String id;
+    private Integer voteCount;
+    private Integer id;
     private Boolean video;
-    private String voteAverage;
+    private Double voteAverage;
     private String title;
-    private String popularity;
+    private Double popularity;
     private String posterPath;
     private String originalLanguage;
     private String originalTitle;
-    private List<String> genreId;
+    private List<Integer> genreId;
     private String backDropPath;
     private Boolean adult;
     private String overview;
     private String releaseDate;
 
-    public String getVoteCount() {
+    public Integer getVoteCount() {
         return voteCount;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -36,7 +36,7 @@ public class MoviesVO {
         return video;
     }
 
-    public String getVoteAverage() {
+    public Double getVoteAverage() {
         return voteAverage;
     }
 
@@ -44,7 +44,7 @@ public class MoviesVO {
         return title;
     }
 
-    public String getPopularity() {
+    public Double getPopularity() {
         return popularity;
     }
 
@@ -60,7 +60,7 @@ public class MoviesVO {
         return originalTitle;
     }
 
-    public List<String> getGenreId() {
+    public List<Integer> getGenreId() {
         return genreId;
     }
 
