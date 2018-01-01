@@ -9,16 +9,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import xyz.arkarhein.movieshelf.MoviesApp;
 import xyz.arkarhein.movieshelf.R;
 import xyz.arkarhein.movieshelf.adapters.MoviesAdapter;
+import xyz.arkarhein.movieshelf.data.model.MoviesModel;
 import xyz.arkarhein.movieshelf.delegates.MoviesActionDelegate;
+import xyz.arkarhein.movieshelf.events.LoadedMoviesEvent;
 
 public class MainActivity extends AppCompatActivity implements MoviesActionDelegate {
 
@@ -31,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MoviesActionDeleg
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-    private MoviesAdapter nMoviesAdapter = new MoviesAdapter(this);
+    private MoviesAdapter mMoviesAdapter = new MoviesAdapter(this);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,8 +51,22 @@ public class MainActivity extends AppCompatActivity implements MoviesActionDeleg
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         rvMovies.setLayoutManager(linearLayoutManager);
-        rvMovies.setAdapter(nMoviesAdapter);
+        rvMovies.setAdapter(mMoviesAdapter);
 
+        MoviesModel.getsObjInstance().loadMovies();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -85,4 +107,11 @@ public class MainActivity extends AppCompatActivity implements MoviesActionDeleg
     public void onTapMovieOverviewsBtn() {
 
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMoviesLoaded(LoadedMoviesEvent event) {
+        Log.d(MoviesApp.LOG_TAG, "onMoviesLoaded" + event.getMoviesList().size());
+        mMoviesAdapter.setMovies(event.getMoviesList());
+    }
+
 }
