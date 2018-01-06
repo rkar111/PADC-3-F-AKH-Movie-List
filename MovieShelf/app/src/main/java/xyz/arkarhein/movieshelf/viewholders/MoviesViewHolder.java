@@ -50,7 +50,7 @@ public class MoviesViewHolder extends RecyclerView.ViewHolder {
         if (movies.getPosterPath() != null) {
             ivPoster.setVisibility(View.VISIBLE);
             Glide.with(ivPoster.getContext())
-                    .load(movies.getPosterPath())
+                    .load("http://image.tmdb.org/t/p/original" + movies.getPosterPath())
                     .into(ivPoster);
         } else {
             ivPoster.setVisibility(View.GONE);
